@@ -1,0 +1,42 @@
+[
+    {
+        "id": "job1",
+        "type": "Backend JS Developer",
+        "qualifications": 
+            [
+                "4 Years of working with JavaScript",
+                "Bachelors Degree",
+                "Have a good grasp on Data Structuring"
+            ]
+    },
+    {
+        "id": "job2",
+        "type": "Janitor",
+        "qualifications": 
+        [
+            "No Criminal Background",
+            "Can work weekends",
+            "Can clean toilets"
+        ]
+    },
+    {
+        "id": "job3",
+        "type": "Frontend JS Developer",
+        "qualifications": 
+        [
+            "Proficient in JavaScript, TypeScript, Next.js, and React (Knowing React Native will also be preferred)",
+            "Masters Degree in Bioengineering",
+            "Can make pigs fly (Mandatory!!)"
+        ]
+    },
+    {
+        "id": "job4" ,
+        "type": "Professional Gamer",
+        "qualifications": 
+        [
+            "You have to stink",
+            "Have No siginificant partner",
+            "Dedicated to the game no matter what"
+        ]
+    }
+]

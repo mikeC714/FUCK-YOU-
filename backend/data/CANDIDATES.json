@@ -1,0 +1,105 @@
+[
+    {
+        "id": "12345",
+        "name": "Joe Shmoe",
+        "age": 24,
+        "job": "Backend JavaScript Developer",
+        "experience": 
+        [
+            "4 years using Python, and JavaScript",
+            "Knows a little Java",
+            "Was previously an intern at AT&T"
+        ],
+        "ecducation": 
+        [
+            "Has a GED"
+        ],
+        "record": 
+        {
+            "Felon" : "Armed Robbery",
+            "Prison Time": "6 Years"
+        },
+        "flags": {
+            "green_flags": 
+            [
+                "4 years using Python, and JavaScript",
+                "Was previously an intern at AT&T"
+            ],
+            "red_flags": 
+            [
+                {
+                    "Felon" : "Armed Robbery",
+                    "Prison Time": "6 Years"
+                }
+            ]
+        }
+
+    },
+    {
+        "id": "56789",
+        "name": "John Smith",
+        "age": 40,
+        "job": "C++ Developer",
+        "experience": 
+        [
+            "Proficent in Google Docs",
+            "Knows what 2+2 is"
+        ],
+        "ecducation": 
+        [
+            "Masters in Gynocology",
+            "Masters in Communications",
+            "Bachelors in protest for minorities"
+        ],
+        "record": 
+        {
+            "Misdemeanor": "Aggravated Battery"
+        },
+        "flags":{
+            "green_flags": 
+            [
+                "Opinionated"
+            ],
+            "red_flags": 
+            [
+                "Opinionated",
+                "Overly Sensitive",
+                "Bored in Life"
+            ]
+
+        }
+    },
+    {
+        "id": "90123",
+        "name": "Frank Dove",
+        "age": 14,
+        "job": "Cyber Data Engineer",
+        "experience": 
+        [
+            "20 years working with Php, Java, and C#",
+            "Previously worked for Tesla, X, and Black Rock"
+        ],
+        "ecducation": 
+        [
+            "Passed Elementary School"
+        ],
+        "record": 
+        {
+            "Felon": "DUI"
+        },
+        "flags":{
+            "green_flags": 
+            [
+                "20 years working with Php, Java, and C#",
+                "Previously worked for Tesla, X, and Black Rock",
+                { 
+                    "Felon": "DUI"
+                }
+            ],
+            "red_flags": 
+            [
+                "???"
+            ]
+        }
+    }
+]

@@ -1,0 +1,16 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {"type": "string"},
+            "userId": {"type": "string"},
+            "fullName": {"type": "string"},
+            "avatar": {"type": "string", "format": "uri"},
+            "role": {"type": "string"},
+            "companyName": {"type": "string"},
+            "createdAt": {"type": "string", "format": "date-time"}
+        },
+        "required": ["id", "userId", "fullName"]
+    }
+}

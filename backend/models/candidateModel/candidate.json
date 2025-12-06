@@ -1,0 +1,69 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "phone": { "type": "string" },
+            "email": { "type": "string", "format": "email" },
+            "resume": { "type": "string", "format": "uri" },
+            "status": { "type": "string" },
+            "stage": { "type": "string" },
+            "position": { "type": "string" },
+            "department": { "type": "string" },
+            "expectedSalary": { "type": "number" },
+            "availableStartDate": { "type": "string", "format": "date" },
+            "credentials": {
+                "type": "object",
+                "properties": {
+                    "education": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "school": { "type": "string" },
+                                "diploma": { "type": "string", "format": "uri" },
+                                "experience": { "type": "string" },
+                                "graduationYear": { "type": "string" }
+                            }
+                        }
+                    },
+                    "links": {
+                        "type": "object",
+                        "properties": {
+                            "portfolio": { "type": "string", "format": "uri" },
+                            "linkedin": { "type": "string", "format": "uri" },
+                            "gitHub": { "type": "string", "format": "uri" }
+                        }
+                    },
+                    "skills": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                    }
+                }
+            },
+            "interviews": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "date": { "type": "string", "format": "date-time" },
+                        "interviewer": { "type": "string" },
+                        "stage": { "type": "string" },
+                        "notes": { "type": "string" },
+                        "rating": { "type": "number" }
+                    }
+                }
+            },
+            "notes": { "type": "string" },
+            "rating": { "type": "number" },
+            "isRemote": { "type": "boolean" },
+            "needsVisa": { "type": "boolean" },
+            "dateSubmitted": { "type": "string", "format": "date-time" },
+            "lastContacted": { "type": "string", "format": "date-time" },
+            "updatedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["id", "name", "email", "position", "rating", "notes"]
+    }
+}
