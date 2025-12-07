@@ -1,11 +1,11 @@
-import supaBase from '../server.cjs'
+import supaBase from "../config/supabase"
 
 // CREATE NEW PROFILE
-const signUp = async (req, res, next) => {  // ← Add 'next' parameter
+const signUp = async (req, res, next) => { 
     try {
-        const { email, password, fullName, role } = req.body;  // ← Add 'role'
+        const { email, password, fullName, role } = req.body;  
 
-        // Step 1: Create auth user
+        
         const { data: authData, error: authError } = await supaBase.auth.signUp({
             email,
             password
@@ -13,20 +13,19 @@ const signUp = async (req, res, next) => {  // ← Add 'next' parameter
         
         if (authError) throw authError;
 
-        // Step 2: Create profile (NOT a function, just code that runs)
+        
         const { data: profile, error: profileError } = await supaBase
-            .from('profiles')  // ← Use 'profiles' table, not 'candidates'
+            .from('profiles')
             .insert([{
-                auth_id: authData.user.id,           // ← Get ID from authData
-                full_name: fullName,                  // ← Get fullName from req.body
-                role: role || 'recruiter'             // ← Add quotes around 'recruiter'
+                auth_id: authData.user.id,           
+                full_name: fullName,                  
+                role: role || 'recruiter'             
             }])
             .select()
             .single();
 
         if (profileError) throw profileError;
         
-        // Step 3: Send success response
         res.status(201).json({
             success: true,
             data: {
@@ -36,7 +35,7 @@ const signUp = async (req, res, next) => {  // ← Add 'next' parameter
         });
         
     } catch (error) {
-        next(error);  // ← This passes error to your error handling middleware
+        next(error);  
     }
 };
 
@@ -86,9 +85,14 @@ const signOut = async (req,res) => {
     }
 };
 
+const requireAuth = async (req, res) => {
+    
+}   
+
 
 module.exports = {
     login,
     signOut,
-    signUp
+    signUp,
+    requireAuth
 }

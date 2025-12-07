@@ -3,15 +3,14 @@ const fileUpload = require("express-fileupload");
 const pdfParse = require("pdf-parse");
 const cors = require("cors")
 const { createClient } = require("@supabase/supabase.js")
+const { google } = require("googleapis")
 require('dotenv').config();
 
 
 // ROUTES
-
-const { jobsRouter } = require("./router/routes/jobs.js")
 const { candidatesRouter } = require("./router/routes/candidates.js")
-const { resumesRouter } = require("./router/routes/resumes.js")
-const { applicantRouter } = require("./router/routes/applicant.js")
+const { authRouter } = require("./routes/authRoutes.js")
+
 
 
 // SERVER
@@ -30,6 +29,15 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 
+// INIT GOOGLE APIS
+
+// REPLACE WITH REAL ENVIROMENT VARIABLES
+
+const googleApi = google(
+    process.env.GOOGLE_URL,
+    process.env.GOOGLE_KEY
+)
+
 // INIT SUPABASE
 
 const supaBase = createClient(
@@ -40,28 +48,11 @@ const supaBase = createClient(
 
 // INIT SERVER
 
-app.get('/', (req, res) => {
-  res.json({ message : 'ATS API IS RUNNING' })
-});
-
 app.listen(PORT, (err) => {
   if(err){
     throw err
   }console.log(`Server is running on ${PORT}`)
 });
-
-
-// GET/POST FOR ROUTER
-
-
-app.use(jobsRouter);
-app.get('/jobs', jobsRouter);
-
-app.use(candidatesRouter);
-app.get('/candidates', candidatesRouter)
-
-app.use('/api/applicant', applicantRouter)
-
 
 
 
